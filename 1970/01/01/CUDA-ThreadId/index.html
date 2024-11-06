@@ -9,12 +9,12 @@
     <meta name="description" content="CUDA_ThreadId结合blocks和grid的概念.  一维  blockIdx.x：线程块在网格中的索引。 threadIdx.x：线程在其所属线程块中的索引。 每个线程的全局索引（global index）：globalIdx &#x3D; blockIdx.x * Bx + threadIdx.x  二维  blockIdx.x 和 blockIdx.y：分别是线程块在网格中 x 和 y 方向">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CUDA_ThreadId">
-<meta property="og:url" content="https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/index.html">
+<meta property="og:url" content="https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/index.html">
 <meta property="og:site_name" content="Lumosmax7">
 <meta property="og:description" content="CUDA_ThreadId结合blocks和grid的概念.  一维  blockIdx.x：线程块在网格中的索引。 threadIdx.x：线程在其所属线程块中的索引。 每个线程的全局索引（global index）：globalIdx &#x3D; blockIdx.x * Bx + threadIdx.x  二维  blockIdx.x 和 blockIdx.y：分别是线程块在网格中 x 和 y 方向">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-08-11T14:00:39.000Z">
-<meta property="article:modified_time" content="2024-11-01T14:28:41.721Z">
+<meta property="article:published_time" content="1970-01-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-05T14:40:20.837Z">
 <meta property="article:author" content="Leo">
 <meta name="twitter:card" content="summary">
     
@@ -81,10 +81,8 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post" href="/2024/11/01/leetcode-1/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        
-        <li><a class="icon" aria-label="Next post" href="/2024/07/06/hello-world/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post" href="/1970/01/01/leetcode-1/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -97,17 +95,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&text=CUDA_ThreadId"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&is_video=false&description=CUDA_ThreadId"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=CUDA_ThreadId&body=Check out this article: https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&name=CUDA_ThreadId&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&t=CUDA_ThreadId"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&text=CUDA_ThreadId"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&is_video=false&description=CUDA_ThreadId"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=CUDA_ThreadId&body=Check out this article: https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&name=CUDA_ThreadId&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&t=CUDA_ThreadId"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -139,7 +137,7 @@
       
     <div class="postdate">
       
-        <time datetime="2024-08-11T14:00:39.000Z" class="dt-published" itemprop="datePublished">2024-08-11</time>
+        <time datetime="1970-01-01T00:00:00.000Z" class="dt-published" itemprop="datePublished">1970-01-01</time>
         
       
     </div>
@@ -212,17 +210,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&text=CUDA_ThreadId"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&is_video=false&description=CUDA_ThreadId"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=CUDA_ThreadId&body=Check out this article: https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&name=CUDA_ThreadId&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lumosmax7.github.io/2024/08/11/CUDA-ThreadId/&t=CUDA_ThreadId"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&text=CUDA_ThreadId"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&is_video=false&description=CUDA_ThreadId"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=CUDA_ThreadId&body=Check out this article: https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&title=CUDA_ThreadId"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&name=CUDA_ThreadId&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lumosmax7.github.io/1970/01/01/CUDA-ThreadId/&t=CUDA_ThreadId"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
