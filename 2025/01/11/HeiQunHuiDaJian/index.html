@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="description" content="黑群晖搭建硬件是铁威马的F2-221，双网口，cpu是Intel J3355 CPU。  烧录rr.img镜像到U盘中作为启动盘，Windows下可以用Rufus，Mac用Balena Etcher  GitHub - RROrg&#x2F;rr: Redpill Recovery (arpl-i18n)  完成后插入设备中等待启动完成，设备会自动获取IP（此时网线插入到下面的网口） 进入路由器查">
 <meta property="og:type" content="article">
-<meta property="og:title" content="黑群晖搭建以及利用FRP内网穿透DSM上服务">
-<meta property="og:url" content="https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:title" content="黑群晖搭建以及利用FRP内网穿透DSM上的服务">
+<meta property="og:url" content="https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/index.html">
 <meta property="og:site_name" content="Lumosmax7">
 <meta property="og:description" content="黑群晖搭建硬件是铁威马的F2-221，双网口，cpu是Intel J3355 CPU。  烧录rr.img镜像到U盘中作为启动盘，Windows下可以用Rufus，Mac用Balena Etcher  GitHub - RROrg&#x2F;rr: Redpill Recovery (arpl-i18n)  完成后插入设备中等待启动完成，设备会自动获取IP（此时网线插入到下面的网口） 进入路由器查">
 <meta property="og:locale" content="en_US">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/lumosmax7/PicImage/main/202501112220831.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lumosmax7/PicImage/main/202501112221360.png">
 <meta property="article:published_time" content="2025-01-11T14:55:44.000Z">
-<meta property="article:modified_time" content="2025-01-11T14:57:55.378Z">
+<meta property="article:modified_time" content="2025-01-11T15:26:04.154Z">
 <meta property="article:author" content="Leo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/lumosmax7/PicImage/main/202501112138983.png">
@@ -47,7 +47,7 @@
       
     
     <!-- title -->
-    <title>黑群晖搭建以及利用FRP内网穿透DSM上服务</title>
+    <title>黑群晖搭建以及利用FRP内网穿透DSM上的服务</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -93,7 +93,7 @@
       <ul>
         
         
-        <li><a class="icon" aria-label="Next post" href="/2025/01/11/CloudFlare%E6%90%AD%E5%BB%BAdocker%E9%95%9C%E5%83%8F/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post" href="/2025/01/11/CloudFlareDaJianDockerJingXiang/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -106,17 +106,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&text=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&is_video=false&description=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=黑群晖搭建以及利用FRP内网穿透DSM上服务&body=Check out this article: https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&name=黑群晖搭建以及利用FRP内网穿透DSM上服务&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&t=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&text=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&is_video=false&description=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=黑群晖搭建以及利用FRP内网穿透DSM上的服务&body=Check out this article: https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&name=黑群晖搭建以及利用FRP内网穿透DSM上的服务&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&t=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -136,7 +136,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        黑群晖搭建以及利用FRP内网穿透DSM上服务
+        黑群晖搭建以及利用FRP内网穿透DSM上的服务
     </h1>
 
 
@@ -309,17 +309,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&text=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&is_video=false&description=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=黑群晖搭建以及利用FRP内网穿透DSM上服务&body=Check out this article: https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&title=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&name=黑群晖搭建以及利用FRP内网穿透DSM上服务&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lumosmax7.github.io/2025/01/11/%E9%BB%91%E7%BE%A4%E6%99%96%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%88%A9%E7%94%A8FRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8FDSM%E4%B8%8A%E6%9C%8D%E5%8A%A1/&t=黑群晖搭建以及利用FRP内网穿透DSM上服务"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&text=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&is_video=false&description=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=黑群晖搭建以及利用FRP内网穿透DSM上的服务&body=Check out this article: https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&title=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&name=黑群晖搭建以及利用FRP内网穿透DSM上的服务&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lumosmax7.github.io/2025/01/11/HeiQunHuiDaJian/&t=黑群晖搭建以及利用FRP内网穿透DSM上的服务"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
